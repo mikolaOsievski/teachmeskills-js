@@ -1,0 +1,31 @@
+body,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 500px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: #efd837;
+}
+.wrapper p,
+.wrapper span {
+  font-family: "Roboto", sans-serif;
+  font-size: 10rem;
+  font-weight: 900;
+}
+.wrapper span {
+  font-size: 6rem;
+}
