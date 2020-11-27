@@ -130,15 +130,15 @@ console.log(usersUpperCase);
   Например: fibonachi(n); (При вызове функции положите n = 8);
 */
 
-function fib(n) {
+function fibonachi(n) {
   if (n <= 1) {
     return n;
   } else {
-    return fib(n - 1) + fib(n - 2);
+    return fibonachi(n - 1) + fibonachi(n - 2);
   }
 }
 
-console.log(fib(8));
+console.log(fibonachi(8));
 
 /* Task #6
 
@@ -146,12 +146,13 @@ console.log(fib(8));
   Например: factorial(n); (При выозове полжите n = 10);
 */
 
-function fact(n) {
-  if (n == 1) {
+function factorial(n) {
+  if (n == 1 || n == 0) {
     return 1;
   } else {
-    return n * fact(n - 1);
+    return n * factorial(n - 1);
   }
 }
 
-console.log(fact(10));
+console.log(factorial(10));
+console.log(factorial(0));
