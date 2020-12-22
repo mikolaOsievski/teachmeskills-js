@@ -9,17 +9,9 @@ let func = (() => {
   return () => ++counter;
 })();
 
-console.log(func());
-console.log(func());
-console.log(func());
-console.log(func());
-console.log(func());
-console.log(func());
-console.log(func());
-console.log(func());
-console.log(func());
-console.log(func());
-console.log(func());
+for (let i = 0; i < 20; i++) {
+  console.log(func());
+}
 
 /* Task #2
   Напишите функцию которая будет увеличивать переменную let i = 0, от 0 до 20,
