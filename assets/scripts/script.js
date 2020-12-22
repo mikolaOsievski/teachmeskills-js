@@ -3,6 +3,24 @@
   (сколько раз ее вызызвали до этого плюс этот вызов).
 */
 
+let func = (() => {
+  let counter = 0;
+
+  return () => ++counter;
+})();
+
+console.log(func());
+console.log(func());
+console.log(func());
+console.log(func());
+console.log(func());
+console.log(func());
+console.log(func());
+console.log(func());
+console.log(func());
+console.log(func());
+console.log(func());
+
 /* Task #2
   Напишите функцию которая будет увеличивать переменную let i = 0, от 0 до 20,
   при чем переменная будет увеличивать свое значение на еденицу каждые 2 секунды.
