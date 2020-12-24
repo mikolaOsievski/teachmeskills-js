@@ -10,7 +10,7 @@ let func = (() => {
 })();
 
 for (let i = 0; i < 20; i++) {
-  console.log(func());
+  // console.log(func());
 }
 
 /* Task #2
@@ -20,9 +20,75 @@ for (let i = 0; i < 20; i++) {
   Попробуйте реализовать через setInterval и через рекурснивный setTimeout.
 */
 
+let counterTwoSeconds = (start = 0, end = 20) => {
+  let i = start;
+  console.log(i);
+  let timerIntervalId = setInterval(
+    (end) => {
+      i++;
+      console.log(i);
+
+      if (i === end) {
+        clearInterval(timerIntervalId);
+      }
+    },
+    2000,
+    end
+  );
+};
+
+// counterTwoSeconds();
+// counterTwoSeconds(0, 4);
+
+let counterTwoSecondsRecursion = (start = 0, end = 20) => {
+  let i = start;
+
+  let timerTimeoutId = setTimeout(
+    function addOne(end) {
+      if (i === end) {
+        clearTimeout(timerTimeoutId);
+      } else {
+        i++;
+        console.log(i);
+
+        timerTimeoutId = setTimeout(addOne, 2000, end);
+      }
+    },
+    2000,
+    end
+  );
+};
+
+// counterTwoSecondsRecursion();
+// counterTwoSecondsRecursion(0, 5);
+
 /* Task #3
   Напишите функцию startTimer() которая будет запускать вывод через confirm("Реклама исчезнет счерез 5 секунд,
   вы согласны ?"), при нажатии "ДА" вывоите alert("Реклама") через 5 секунд,
   если нажали "НЕТ", то повторить вопрос confirm("Реклама исчезнет счерез 5 секунд, вы согласны ?")
   и так до тех пор пока пользовательне нажмет "ДА" и не увидит эту рекламу через alert.
 */
+
+function startTimer() {
+  // *** solution option 1 ***
+  let question;
+
+  do {
+    question = confirm("Реклама исчезнет через 5 секунд, Вы согласны ?");
+
+    if (question) {
+      setTimeout(() => alert("Реклама 👕 👖 🧦"), 5000);
+    }
+  } while (!question);
+
+  // *** solution option 2 ***
+  // let timerIntervalId = setInterval(() => {
+  //   let question = confirm("Реклама исчезнет через 5 секунд, Вы согласны ?");
+  //   if (question) {
+  //     clearInterval(timerIntervalId);
+  //     timerId = setTimeout(() => alert("Реклама 👕 👖 🧦"), 5000);
+  //   }
+  // }, 0);
+}
+
+// startTimer();
