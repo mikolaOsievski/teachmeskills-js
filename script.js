@@ -51,3 +51,7 @@ designer.userInfo = userInfo;
 
 creator.userInfo();
 designer.userInfo();
+
+// using call()
+// userInfo.call(creator);
+// userInfo.call(designer);
