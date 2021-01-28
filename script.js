@@ -31,7 +31,10 @@ cleanRoom(3).then((result) =>
 function cleanRoom(dirtyLevel) {
   return new Promise((resolve, reject) => {
     if (dirtyLevel > 10) {
-      reject("Совсем грязная комната!!! Я в сарае не убираю! ");
+      setTimeout(
+        () => reject("Совсем грязная комната!!! Я в сарае не убираю!"),
+        1000
+      );
     } else {
       setTimeout(() => resolve(dirtyLevel), dirtyLevel * 1000);
     }
@@ -58,7 +61,10 @@ cleanRoom(2).then(
 function cleanRoomOne(dirtyLevel) {
   return new Promise((resolve, reject) => {
     if (dirtyLevel > 10) {
-      reject("Совсем грязная комната!!! Я в сарае не убираю! ");
+      setTimeout(
+        () => reject("Совсем грязная комната!!! Я в сарае не убираю!"),
+        1000
+      );
     } else {
       setTimeout(() => resolve(dirtyLevel), dirtyLevel * 1000);
     }
