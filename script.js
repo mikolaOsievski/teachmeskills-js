@@ -56,7 +56,6 @@ class Skyscraper extends House {
   constructor(length, width, floors, offices) {
     super(length, width, floors);
     this.offices = offices;
-    // this.fullArea = null;
   }
 
   get fullArea() {
